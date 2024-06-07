@@ -1,10 +1,12 @@
-const experss = require("express");
+const express = require("express");
+const mongoose = require("mongoose")
+require('./db');
 
-const app = experss();
+const app = express();
 const userRoutes = require("./routes/user")
 const adminRoutes = require("./routes/admin")
 const port = 4030;
-app.use(experss.json())
+app.use(express.json())
 app.listen(port, () => {
   console.log("started port: ", port);
 });
@@ -21,3 +23,5 @@ app.get("/test", () => {
 app.post("/test", () => {
   console.log("post called");
 });
+
+
